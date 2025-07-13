@@ -1,0 +1,419 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luxury Estates - Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/cont.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <h5 onclick="window.location.href = 'home.html' "><i class="fa-solid fa-house"></i>   Luxury Estates</h5>
+        <ul class="ul_nav">
+            <a class="navbar-brand" href="home.html">Home</a> 
+            <a  href="properties.html" class="navbar-brand">Properties</a>
+            <a class="navbar-brand" href="fav.html">Favorites</a>
+            <a class="navbar-brand li" href="contact.html">Contact</a>
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <div></div>
+            </div>  
+        </ul>
+    </nav>
+
+    <!-- Header Contact Section -->
+    <section class="contact-header" role="banner" aria-label="Contact Us header">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team of real estate experts</p>
+    </section>
+
+    <!-- Main content container -->
+    <main class="container contact-main" role="main" aria-labelledby="contactTitle">
+        <div class="row g-4">
+        <!-- Left: Contact Form -->
+        <section 
+            class="col-lg-8 form-container" 
+            aria-labelledby="formTitle" 
+            data-aos="fade-up" 
+            data-aos-offset="200" 
+            data-aos-delay="100" 
+            data-aos-duration="900" 
+            data-aos-easing="ease-in-out" 
+            data-aos-once="true"
+            >
+            <h2 id="formTitle" class="mb-4" style="font-weight: 700; font-size: 1.35rem;">Send us a Message</h2>
+            <form id="contactForm" novalidate aria-describedby="formInstructions">
+            <div id="formInstructions" class="visually-hidden">All fields marked with an asterisk are required.</div>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                <label for="firstName" class="form-label fw-semibold">First Name <span class="text-danger">*</span></label>
+                <input
+                    type="text" 
+                    id="firstName" 
+                    name="firstName" 
+                    class="form-control" 
+                    pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s\-'`]*$" 
+                    title="First name should contain only letters and valid characters." 
+                    required 
+                    aria-required="true"
+                    aria-describedby="firstNameHelp"
+                    autocomplete="given-name"
+                />
+                <div id="firstNameHelp" class="form-text">Only letters allowed.</div>
+                <div class="invalid-feedback">Please enter a valid first name using letters only.</div>
+                </div>
+                <div class="col-md-6">
+                <label for="lastName" class="form-label fw-semibold">Last Name <span class="text-danger">*</span></label>
+                <input
+                    type="text" 
+                    id="lastName" 
+                    name="lastName" 
+                    class="form-control" 
+                    pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s\-'`]*$" 
+                    title="Last name should contain only letters and valid characters." 
+                    required 
+                    aria-required="true"
+                    aria-describedby="lastNameHelp"
+                    autocomplete="family-name"
+                />
+                <div id="lastNameHelp" class="form-text">Only letters allowed.</div>
+                <div class="invalid-feedback">Please enter a valid last name using letters only.</div>
+                </div>
+            </div>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                <label for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                <input
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-control" 
+                    required 
+                    aria-required="true"
+                    aria-describedby="emailHelp"
+                    autocomplete="email"
+                />
+                <div id="emailHelp" class="form-text">Enter a valid email address.</div>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-6">
+                <label for="phone" class="form-label fw-semibold">Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    class="form-control" 
+                    pattern="^\d*$" 
+                    title="Phone number should contain digits only." 
+                    minlength="7"
+                    maxlength="15"
+                    aria-describedby="phoneHelp"
+                    autocomplete="tel"
+                />
+                <div id="phoneHelp" class="form-text">Digits only </div>
+                <div class="invalid-feedback">Please enter a valid phone number with digits only.</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label fw-semibold">Subject <span class="text-danger">*</span></label>
+                <select class="form-select" id="subject" name="subject" required aria-required="true" aria-describedby="subjectHelp">
+                <option value="" disabled selected>Select a subject</option>
+                <option value="Property Inquiry">Property Inquiry</option>
+                <option value="Schedule Viewing">Schedule Viewing</option>
+                <option value="General Question">General Question</option>
+                <option value="Other">Other</option>
+                </select>
+                <div id="subjectHelp" class="form-text">Please select a subject.</div>
+                <div class="invalid-feedback">Please select a subject.</div>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
+                <textarea 
+                class="form-control" 
+                id="message" 
+                name="message" 
+                rows="4" 
+                placeholder="Tell us how we can help you..." 
+                required 
+                aria-required="true"
+                aria-describedby="messageHelp"
+                ></textarea>
+                <div id="messageHelp" class="form-text">Your message is required.</div>
+                <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="subscribe" name="subscribe" />
+                <label class="form-check-label" for="subscribe">Subscribe to our newsletter for property updates</label>
+            </div>
+            <button type="submit" class="btn btn-success btn-send" aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 7.855a.5.5 0 0 0-.106.81l4.995 4.995a.5.5 0 0 0 .81-.106L15.964.686z"/></svg> Send Message
+            </button>
+            </form>
+        </section>
+
+        <!-- Right: Sidebar info -->
+        <aside class="col-lg-4">
+            <!-- Office Information Panel -->
+            <section class="sidebar-panel" aria-labelledby="officeInfoTitle" data-aos="fade-left" data-aos-offset="200" data-aos-delay="150" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
+            <h5 id="officeInfoTitle">Office Information</h5>
+            <p>
+                <svg aria-hidden="true" focusable="false" class="icon-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 3.293l6 6V15H2v-5.707l6-6zM5 12v1h6v-1H5z"/></svg>
+                <strong>Main Office</strong><br />
+                123 Luxury Street<br />
+                Downtown District<br />
+                City, State 12345
+            </p>
+            <p>
+                <svg aria-hidden="true" focusable="false" class="icon-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 1 1.015-.063l3.29 3.29a.678.678 0 0 1-.063 1.015l-3.6 2.7a11.03 11.03 0 0 0 5.48 5.48l2.7-3.6a.678.678 0 0 1 1.015-.063l3.29 3.29a.678.678 0 0 1-.063 1.015l-1.672 1.672a1.745 1.745 0 0 1-1.96.1c-2.58-1.525-5.161-4.252-7.312-7.404C1.63 6.423.093 4.73.09 3.345A1.745 1.745 0 0 1 1.763 1.45l1.89-1.89z"/></svg>
+                <strong>Phone</strong><br />
+                +1 234 567 8900
+            </p>
+            <p>
+                <svg aria-hidden="true" focusable="false" class="icon-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.05a.5.5 0 0 1-.855.354L8.5 1.061 7.855 1.404a.5.5 0 0 1-.354 0L.855 5.404A.5.5 0 0 1 0 5v-1zM0 6.5v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5L8.5 9.061 0 6.5z"/></svg>
+                <strong>Email</strong><br />
+                info@luxuryestates.com
+            </p>
+            <p>
+                <svg aria-hidden="true" focusable="false" class="icon-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0a7 7 0 0 1 7 7c0 3.866-3.134 7-7 7a7 7 0 0 1-7-7c0-3.866 3.134-7 7-7zm0 1A6 6 0 0 0 2 7a6 6 0 0 0 12 0 6 6 0 0 0-6-6zm.5 3a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM6 11a2 2 0 0 0 4 0h-4z"/></svg>
+                <strong>Business Hours</strong><br />
+                Mon - Fri: 9:00 AM - 6:00 PM<br />
+                Sat: 10:00 AM - 4:00 PM<br />
+                Sun: Closed
+            </p>
+            </section>
+
+            <!-- Our Team Panel -->
+            <section class="sidebar-panel" aria-labelledby="ourTeamTitle" data-aos="fade-left" data-aos-offset="200" data-aos-delay="200" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true" tabindex="0">
+            <h5 id="ourTeamTitle">Our Team</h5>
+            <div class="team-member">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f240c747-634c-4425-a403-d1bdd3235585.png" alt="Portrait of John Smith, Senior Agent at Luxury Estates" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/38c3d549-be4b-4375-a166-eee56a735c99.png';" />
+                <div class="team-info">
+                <strong>John Smith</strong>
+                <span>Senior Agent</span><br />
+                <a href="mailto:john@luxuryestates.com">john@luxuryestates.com</a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f9d219ea-13d3-417f-b935-699986422ffc.png" alt="Portrait of Sarah Johnson, Luxury Specialist at Luxury Estates" onerror="this.onerror=null;this.src='https://placehold.co/48x48?text=Photo+unavailable';" />
+                <div class="team-info">
+                <strong>Sarah Johnson</strong>
+                <span>Luxury Specialist</span><br />
+                <a href="mailto:sarah@luxuryestates.com">sarah@luxuryestates.com</a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f707d54e-09c7-41fd-8151-49b92260a27a.png" alt="Portrait of Michael Brown, Property Manager at Luxury Estates" onerror="this.onerror=null;this.src='https://placehold.co/48x48?text=Photo+unavailable';" />
+                <div class="team-info">
+                <strong>Michael Brown</strong>
+                <span>Property Manager</span><br />
+                <a href="mailto:michael@luxuryestates.com">michael@luxuryestates.com</a>
+                </div>
+            </div>
+            </section>
+
+            <!-- Follow Us Panel -->
+            <section class="sidebar-panel d-flex align-items-center justify-content-start social-icons" aria-label="Follow us on social media" data-aos="fade-left" data-aos-offset="200" data-aos-delay="250" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
+            <div class="footer-socials" aria-label="Social Media Links">
+            <a href="#" aria-label="Facebook" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8v-2.88h2.5V9.41c0-2.48 1.49-3.85 3.78-3.85 1.1 0 2.25.2 2.25.2v2.47h-1.26c-1.25 0-1.64.77-1.64 1.56v1.86h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14.85A4.48 4.48 0 0022.4 1.7a8.94 8.94 0 01-2.85 1.1A4.52 4.52 0 0016.84.92a4.5 4.5 0 00-4.5 4.5 4.43 4.43 0 00.12 1.03A12.79 12.79 0 013 4.16a4.5 4.5 0 001.4 6 4.46 4.46 0 01-2-.56v.06a4.5 4.5 0 003.6 4.4 4.48 4.48 0 01-2 .07 4.5 4.5 0 004.2 3.14 9 9 0 01-6.64 1.86 12.82 12.82 0 006.94 2 13 13 0 0013-13c0-.2 0-.4-.02-.6A9.22 9.22 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 3a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-5 3a5 5 0 11-5 5 5 5 0 015-5zm0 2a3 3 0 101.06 5.84A3 3 0 0012 10zm8 7a3 3 0 01-3 3H7a3 3 0 01-3-3v-3h2a5 5 0 005 5h6a3 3 0 013-3z"/></svg>
+            </a>
+            <a href="#" aria-label="Linkedin" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4.98 3A2.5 2.5 0 002.5 5.5 2.5 2.5 0 004.98 8a2.5 2.5 0 002.47-2.5A2.5 2.5 0 004.98 3zM2 9.05h6v12.9H2zM15.67 11.5c-1.55 0-2.27.83-2.67 1.41v-1.2h-6v12.9h6v-7c0-1.93 1.14-3.52 3.12-3.52 2 0 2.11 1.79 2.11 3.64v6.88h6v-7.42c0-4-2-5.9-5.71-5.9z"/></svg>
+            </a>
+            </div>
+            </section>
+        </aside>
+        </div>
+    </main>
+
+    <!-- Interactive Map Section -->
+    <section class="interactive-map-section" aria-label="Interactive Map section" data-aos="fade-up" data-aos-offset="200" data-aos-delay="100" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
+        <h4>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16" aria-hidden="true" focusable="false" width="24" height="24" style="margin-right: 0.5rem;">
+            <path d="M3 0a1 1 0 0 0-1 1v12.93a1 1 0 0 0 1 1c.326 0 .645-.16.853-.439l3.535-4.85 3.535 4.85A1 1 0 0 0 12 15a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H3Z"/>
+        </svg>
+        Interactive Map
+        </h4>
+        <p>Our office location and service areas<br />(Map integration would be added here)</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-label="Frequently Asked Questions" data-aos="fade-up" data-aos-offset="200" data-aos-delay="150" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-once="true">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="faq1h">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                How do I schedule a property viewing?
+            </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                You can schedule a property viewing by contacting us through phone, email, or by filling out the contact form above. We'll arrange a convenient time for you to visit the property.
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="faq2h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                What documents do I need to rent/buy a property?
+            </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                We require proof of income, valid identification, and references. Specific requirements vary depending on renting or buying; we will provide detailed information upon request.
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="faq3h">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                Do you offer property management services?
+            </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3h" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+                Yes, we provide comprehensive property management services to help you maintain and rent out your property efficiently.
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer (shape only) -->
+    <footer role="contentinfo">
+        <div class="footer-container">
+        <div class="footer-col">
+            <div class="footer-title">Luxury Estates</div>
+            <p class="footer-text">
+            Your trusted partner in finding the perfect home. We specialize in luxury real estate and exceptional service.
+            </p>
+            <div class="footer-socials" aria-label="Social Media Links">
+            <a href="#" aria-label="Facebook" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8v-2.88h2.5V9.41c0-2.48 1.49-3.85 3.78-3.85 1.1 0 2.25.2 2.25.2v2.47h-1.26c-1.25 0-1.64.77-1.64 1.56v1.86h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14.85A4.48 4.48 0 0022.4 1.7a8.94 8.94 0 01-2.85 1.1A4.52 4.52 0 0016.84.92a4.5 4.5 0 00-4.5 4.5 4.43 4.43 0 00.12 1.03A12.79 12.79 0 013 4.16a4.5 4.5 0 001.4 6 4.46 4.46 0 01-2-.56v.06a4.5 4.5 0 003.6 4.4 4.48 4.48 0 01-2 .07 4.5 4.5 0 004.2 3.14 9 9 0 01-6.64 1.86 12.82 12.82 0 006.94 2 13 13 0 0013-13c0-.2 0-.4-.02-.6A9.22 9.22 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 3a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-5 3a5 5 0 11-5 5 5 5 0 015-5zm0 2a3 3 0 101.06 5.84A3 3 0 0012 10zm8 7a3 3 0 01-3 3H7a3 3 0 01-3-3v-3h2a5 5 0 005 5h6a3 3 0 013-3z"/></svg>
+            </a>
+            <a href="#" aria-label="Linkedin" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4.98 3A2.5 2.5 0 002.5 5.5 2.5 2.5 0 004.98 8a2.5 2.5 0 002.47-2.5A2.5 2.5 0 004.98 3zM2 9.05h6v12.9H2zM15.67 11.5c-1.55 0-2.27.83-2.67 1.41v-1.2h-6v12.9h6v-7c0-1.93 1.14-3.52 3.12-3.52 2 0 2.11 1.79 2.11 3.64v6.88h6v-7.42c0-4-2-5.9-5.71-5.9z"/></svg>
+            </a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <div class="footer-title">Quick Links</div>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">Properties</a>
+            <a href="#" class="footer-link">Favorites</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-col">
+            <div class="footer-title">Property Types</div>
+            <a href="#" class="footer-link">Apartments</a>
+            <a href="#" class="footer-link">Villas</a>
+            <a href="#" class="footer-link">Duplex</a>
+            <a href="#" class="footer-link">Penthouse</a>
+        </div>
+        <div class="footer-col">
+            <div class="footer-title">Contact Information</div>
+            <p class="footer-text"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:middle;fill:#0a7c59;margin-right:6px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> 123 Luxury Street, City, Country</p>
+            <p class="footer-text"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:middle;fill:#0a7c59;margin-right:6px;"><path d="M4 4h16v2H4zM4 12h16v2H4zm0 6h10v2H4z"/></svg> +1 234 567 8900</p>
+            <p class="footer-text"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:middle;fill:#0a7c59;margin-right:6px;"><path d="M20 4H4a2 2 0 0 0-2 2v1l10 6 10-6V6a2 2 0 0 0-2-2zm0 4.15l-10 6-10-6V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"/></svg> info@luxuryestates.com</p>
+        </div>
+        </div>
+        <div class="footer-bottom">
+        <span>© 2024 Luxury Estates. جميع الحقوق محفوظة.</span>
+        <span>Designed with <span style="color:#dc3545;">❤</span> for you</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Form validation enhancements
+        (() => {
+        'use strict'
+
+        const form = document.getElementById('contactForm');
+
+        const letterPattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s\-'`]+$/;
+
+        form.addEventListener('submit', function(event) {
+            // Let browser handle built-in validation first
+            if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+
+            // Custom validation for names to contain only valid letters
+            const firstNameInput = form.firstName;
+            const lastNameInput = form.lastName;
+            const phoneInput = form.phone;
+
+            // Validate first name letters only
+            if (!letterPattern.test(firstNameInput.value.trim())) {
+            firstNameInput.setCustomValidity('Please enter a valid first name using letters only.');
+            } else {
+            firstNameInput.setCustomValidity('');
+            }
+
+            // Validate last name letters only
+            if (!letterPattern.test(lastNameInput.value.trim())) {
+            lastNameInput.setCustomValidity('Please enter a valid last name using letters only.');
+            } else {
+            lastNameInput.setCustomValidity('');
+            }
+
+            // Validate phone number digits only if filled
+            if (phoneInput.value.trim().length > 0 && !/^\d+$/.test(phoneInput.value.trim())) {
+            phoneInput.setCustomValidity('Please enter a valid phone number with digits only.');
+            } else {
+            phoneInput.setCustomValidity('');
+            }
+
+            if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        }, false);
+
+        // Remove custom error when user input changes
+        form.firstName.addEventListener('input', () => {
+            form.firstName.setCustomValidity('');
+            form.classList.remove('was-validated');
+        });
+        form.lastName.addEventListener('input', () => {
+            form.lastName.setCustomValidity('');
+            form.classList.remove('was-validated');
+        });
+        form.phone.addEventListener('input', () => {
+            form.phone.setCustomValidity('');
+            form.classList.remove('was-validated');
+        });
+
+        })();
+    </script>
+    </body>
+    </html>

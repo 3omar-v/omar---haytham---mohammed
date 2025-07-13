@@ -1,0 +1,513 @@
+    /* Custom Styles for the page based on the screenshot reference */
+    .nav
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+
+    h5
+    {
+        cursor: pointer;
+        color: rgb(66, 139, 105);
+    }
+
+    .ul_nav
+    {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        div
+        {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            i
+            {
+                color: red;
+            }
+
+            div
+            {
+                border: none;
+                background-color: red;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+        .li
+        {
+            cursor: pointer;
+            border-bottom: 3px solid rgb(66, 139, 105) ;
+            color: rgb(66, 139, 105);
+        }
+        a
+        {
+            cursor: pointer;
+            color: black;
+            transition: all 0.08s;
+        }
+        a:hover
+        {
+            border-bottom: 3px solid rgb(66, 139, 105) ;
+            color: rgb(66, 139, 105);
+        }
+    }
+}
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fff;
+        color: #111;
+        margin: 0;
+        padding: 0;
+        }
+        
+        /* Header Section with Gradient */
+        .header-section {
+            margin-top: 65px;
+        background: linear-gradient(90deg, #0a7c59 0%, #3fb56e 100%);
+        text-align: center;
+        padding: 3rem 1.5rem 3rem 1.5rem;
+        color: #fff;
+        }
+        .header-section h1 {
+        font-weight: 900;
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+        }
+        .header-section p {
+        font-weight: 500;
+        font-size: 1.05rem;
+        margin: 0 auto;
+        max-width: 480px;
+        opacity: 0.9;
+        }
+        /* Stats Panel */
+        .stats-panel {
+        background-color: #e8f5eb;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem 1rem;
+        margin: 2rem 0;
+        border-radius: 6px;
+        max-width: 840px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .stat-item {
+        flex: 1;
+        text-align: center;
+        color: #0a7c59;
+        font-weight: 600;
+        font-size: 0.9rem;
+        user-select: none;
+        }
+        .stat-item svg {
+        vertical-align: middle;
+        fill: #0a7c59;
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+        }
+        .stat-label {
+        display: block;
+        font-weight: 400;
+        font-size: 0.75rem;
+        color: #0a7c59;
+        opacity: 0.85;
+        margin-top: 4px;
+        }
+        /* Main Content Title and Controls */
+        .favorites-header {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+        .favorites-header-left h5 {
+        font-weight: 700;
+        margin-bottom: 0.15rem;
+        }
+        .favorites-header-left p {
+        font-weight: 500;
+        color: #333;
+        font-size: 0.85rem;
+        margin: 0;
+        }
+        .favorites-controls {
+        font-size: 0.9rem;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        }
+        .favorites-controls a {
+        cursor: pointer;
+        color: #0a7c59;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        user-select: none;
+        transition: color 0.2s ease-in-out;
+        }
+        .favorites-controls a:hover {
+        color: #074a3a;
+        text-decoration: underline;
+        }
+        .favorites-controls svg {
+        fill: #0a7c59;
+        width: 18px;
+        height: 18px;
+        }
+        /* Cards Container */
+        .card-container {
+        max-width: 960px;
+        margin: 0 auto 6rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        min-height: 180px;
+        }
+        /* Property Card */
+        .property-card {
+        border: 1px solid #e3e3e3;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgb(10 124 89 / 0.07);
+        background: #fff;
+        transition: box-shadow 0.3s ease;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        cursor: default;
+        }
+        .property-card:hover {
+        box-shadow: 0 6px 18px rgb(10 124 89 / 0.20);
+        }
+        .property-img-container {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        border-bottom: 1px solid #e3e3e3;
+        }
+        .property-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+        user-select: none;
+        }
+        .property-img-container:hover img {
+        transform: scale(1.05);
+        }
+        /* Tags on image */
+        .property-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: #0a7c59;
+        color: #fff;
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 14px;
+        font-weight: 700;
+        user-select: none;
+        white-space: nowrap;
+        }
+        .property-tag.second {
+        top: 40px;
+        left: 12px;
+        background-color: #198754;
+        }
+        /* Favorite & Share Buttons on Image Top Right */
+        .property-img-btns {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        gap: 10px;
+        user-select: none;
+        }
+        .btn-fav {
+        background-color: #dc3545;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+        border: 2px solid #fff;
+        filter: drop-shadow(0 0 1.5px rgba(0,0,0,0.15));
+        }
+        .btn-fav svg {
+        fill: #fff;
+        width: 18px;
+        height: 18px;
+        }
+        .btn-share {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 2px solid #0a7c59;
+        filter: drop-shadow(0 0 1.5px rgba(0,0,0,0.1));
+        transition: background-color 0.2s ease;
+        }
+        .btn-share:hover {
+        background-color: #e2f3e9;
+        }
+        .btn-share svg {
+        fill: #0a7c59;
+        width: 18px;
+        height: 18px;
+        }
+        /* Property Card Content */
+        .property-content {
+        padding: 16px 16px 20px 16px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+        .property-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+        color: #111;
+        user-select: text;
+        }
+        .property-location {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        user-select: text;
+        }
+        .property-location svg {
+        width: 14px;
+        height: 14px;
+        fill: #0a7c59;
+        flex-shrink: 0;
+        }
+        /* Property info badges */
+        .property-info-badges {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+        user-select: text;
+        flex-wrap: wrap;
+        }
+        .badge-info {
+        background-color: #e8f5eb;
+        color: #0a7c59;
+        padding: 4px 10px;
+        font-weight: 600;
+        border-radius: 14px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        user-select: text;
+        white-space: nowrap;
+        }
+        .badge-info svg {
+        fill: #0a7c59;
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        }
+        /* Price */
+        .property-price {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #0a7c59;
+        margin-bottom: 12px;
+        }
+        /* Buttons at bottom: View Details and Call */
+        .property-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        }
+        .btn-view {
+        background-color: #0a7c59;
+        border: none;
+        padding: 6px 16px;
+        color: #fff;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background-color 0.3s ease;
+        }
+        .btn-view:hover {
+        background-color: #074a3a;
+        }
+        .btn-view svg {
+        fill: #fff;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        }
+        .btn-call {
+        color: #0a7c59;
+        font-size: 1.4rem;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: color 0.3s ease;
+        }
+        .btn-call:hover {
+        color: #074a3a;
+        }
+        .btn-call svg {
+        fill: currentColor;
+        width: 20px;
+        height: 20px;
+        }
+        /* Added Date Info */
+        .added-date {
+        margin-top: 12px;
+        color: #555;
+        font-weight: 500;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+        }
+        .added-date svg {
+        width: 14px;
+        height: 14px;
+        fill: #0a7c59;
+        }
+        /* Footer */
+        footer {
+        background-color: #22242b;
+        color: #ccc;
+        padding: 3rem 2rem 1.5rem 2rem;
+        font-size: 0.9rem;
+        user-select: none;
+        }
+        .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+        .footer-col {
+        min-width: 180px;
+        flex: 1 1 180px;
+        }
+        .footer-title {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        }
+        .footer-text, 
+        .footer-link {
+        color: #bbb;
+        font-weight: 400;
+        line-height: 1.4;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        }
+        .footer-link:hover {
+        text-decoration: underline;
+        color: #0a7c59;
+        }
+        .footer-socials {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        }
+        .footer-socials a {
+        display: inline-flex;
+        width: 32px;
+        height: 32px;
+        background-color: #343a40;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        color: #bbb;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        }
+        .footer-socials a:hover {
+        background-color: #0a7c59;
+        color: #fff;
+        }
+        .footer-socials svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+        }
+        /* Footer bottom line */
+        .footer-bottom {
+        border-top: 1px solid #444;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: #777;
+        flex-wrap: wrap;
+        gap: 1rem;
+        }
+        .footer-bottom a {
+        color: #dc3545;
+        text-decoration: none;
+        font-weight: 600;
+        }
+        /* Responsive tweaks */
+        @media (max-width: 575.98px) {
+        .navbar-nav {
+            flex-wrap: wrap;
+        }
+        .favorites-header {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        }

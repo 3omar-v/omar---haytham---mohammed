@@ -1,0 +1,336 @@
+    /* Custom styles matching the design */
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8fdf9;
+        color: #222;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        .nav
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+
+    h5
+    {
+        cursor: pointer;
+        color: rgb(66, 139, 105);
+    }
+
+    .ul_nav
+    {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        div
+        {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            i
+            {
+                color: red;
+            }
+
+            div
+            {
+                border: none;
+                background-color: red;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+        .li
+        {
+            cursor: pointer;
+            border-bottom: 3px solid rgb(66, 139, 105) ;
+            color: rgb(66, 139, 105);
+        }
+        a
+        {
+            cursor: pointer;
+            color: black;
+            transition: all 0.08s;
+        }
+        a:hover
+        {
+            border-bottom: 3px solid rgb(66, 139, 105) ;
+            color: rgb(66, 139, 105);
+        }
+    }
+}
+        /* Header section styles */
+        .contact-header {
+        margin-top: 65px;
+        background-color: #009961;
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+        }
+        .contact-header h1 {
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+        }
+        .contact-header p {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+        }
+
+        /* Form and sidebar container */
+        .contact-main {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        }
+        .form-container {
+        background: white;
+        padding: 2rem 2rem 2rem 2rem;
+        border-radius: 0.3rem;
+        box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+        margin-bottom: 1.5rem;
+        }
+
+        /* Right sidebar panels */
+        .sidebar-panel {
+        background: white;
+        padding: 1.5rem 1.75rem;
+        border-radius: 0.3rem;
+        box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+        margin-bottom: 1.5rem;
+        }
+
+        /* Section titles in sidebar */
+        .sidebar-panel h5 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.3rem;
+        }
+
+        /* Icons on sidebar lines */
+        .icon-inline {
+        width: 1rem;
+        vertical-align: middle;
+        margin-right: 0.4rem;
+        fill: #009961;
+        }
+
+        /* Team members */
+        .team-member {
+        display: flex;
+        margin-bottom: 1rem;
+        }
+        .team-member img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.75rem;
+        border: 1.5px solid #009961;
+        }
+        .team-info {
+        font-size: 0.85rem;
+        line-height: 1.2;
+        }
+        .team-info strong {
+        display: block;
+        font-weight: 600;
+        color: #222;
+        }
+        .team-info a {
+        color: #009961;
+        font-size: 0.85rem;
+        text-decoration: none;
+        word-break: break-word;
+        }
+        .team-info a:hover {
+        text-decoration: underline;
+        }
+
+        /* Follow Us social icons container */
+        .social-icons {
+        font-size: 1.1rem;
+        }
+        .social-icons a {
+        color: #009961;
+        margin-right: 1rem;
+        text-decoration: none;
+        }
+        .social-icons a:hover {
+        color: #006f4b;
+        }
+
+        /* Interactive Map Section */
+        .interactive-map-section {
+        background-color: #6c757d;
+        color: white;
+        padding: 3rem 1.5rem;
+        text-align: center;
+        font-size: 1rem;
+        }
+        .interactive-map-section h4 {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        }
+        .interactive-map-section svg {
+        width: 24px;
+        fill: white;
+        }
+        .interactive-map-section p {
+        font-size: 0.875rem;
+        margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+        max-width: 900px;
+        margin: 3rem auto 3rem auto;
+        padding: 0 1rem;
+        }
+        .faq-section h2 {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #222;
+        }
+        .accordion-button:not(.collapsed) {
+        background-color: #c6dafb;
+        color: #111;
+        font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+        background-color: #22242b;
+        color: #ccc;
+        padding: 3rem 2rem 1.5rem 2rem;
+        font-size: 0.9rem;
+        user-select: none;
+        }
+        .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+        .footer-col {
+        min-width: 180px;
+        flex: 1 1 180px;
+        }
+        .footer-title {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        }
+        .footer-text, 
+        .footer-link {
+        color: #bbb;
+        font-weight: 400;
+        line-height: 1.4;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.5rem;
+        }
+        .footer-link:hover {
+        text-decoration: underline;
+        color: #0a7c59;
+        }
+        .footer-socials {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        }
+        .footer-socials a {
+        display: inline-flex;
+        width: 32px;
+        height: 32px;
+        background-color: #343a40;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        color: #bbb;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        }
+        .footer-socials a:hover {
+        background-color: #0a7c59;
+        color: #fff;
+        }
+        .footer-socials svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+        }
+        /* Footer bottom line */
+        .footer-bottom {
+        border-top: 1px solid #444;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: #777;
+        flex-wrap: wrap;
+        gap: 1rem;
+        }
+        .footer-bottom a {
+        color: #dc3545;
+        text-decoration: none;
+        font-weight: 600;
+        }
+
+        /* Input validation feedback */
+        input:invalid, select:invalid, textarea:invalid {
+        border-color: #dc3545 !important;
+        }
+
+        /* Custom checkbox label spacing */
+        .form-check-label {
+        user-select: none;
+        }
+
+        /* Form button with icon */
+        .btn-send svg {
+        margin-right: 0.4rem;
+        vertical-align: middle;
+        fill: #fff;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 991px) {
+        .contact-main {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        }

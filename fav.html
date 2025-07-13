@@ -1,0 +1,454 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luxury Estates - Favorites</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="css/favorite.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <style>
+    </style>
+    </head>
+    <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <h5 onclick="window.location.href = 'home.html' "><i class="fa-solid fa-house"></i>   Luxury Estates</h5>
+        <ul class="ul_nav">
+            <a class="navbar-brand " href="home.html">Home</a> 
+            <a  href="properties.html" class="navbar-brand">Properties</a>
+            <a class="navbar-brand li" href="fav.html">Favorites</a>
+            <a class="navbar-brand" href="contact.html">Contact</a>
+            <div>
+                <i class="fa-solid fa-heart"></i>
+                <div></div>
+            </div>  
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header-section" data-aos="fade-down">
+        <h1>My Favorite Properties</h1>
+        <p>Browse the properties you've saved to your favorites list</p>
+    </header>
+
+    <!-- Stats Panel -->
+    <section class="stats-panel" data-aos="fade-up">
+        <div class="stat-item" id="total-favorites-stat" aria-label="Total Favorites">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.8-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+        <span id="total-favorites">0</span><span class="stat-label">Total Favorites</span>
+        </div>
+        <div class="stat-item" id="properties-viewed-stat" aria-label="Properties Viewed">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM12 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        <span id="properties-viewed">0</span><span class="stat-label">Properties Viewed</span>
+        </div>
+        <div class="stat-item" id="properties-shared-stat" aria-label="Properties Shared">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M18 8a3 3 0 1 0-2.83-2H13a3 3 0 1 0 0 6h2.17A3 3 0 1 0 18 8zM6 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm12-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        <span id="properties-shared">0</span><span class="stat-label">Properties Shared</span>
+        </div>
+    </section>
+
+    <!-- Favorites Content Header with Controls -->
+    <section class="favorites-header" data-aos="fade-up">
+        <div class="favorites-header-left">
+        <h5>My Favorite Properties</h5>
+        <p>View your saved favorite properties</p>
+        </div>
+        <div class="favorites-controls">
+        <a href="#" id="clear-all" title="Clear All Favorites" role="button" aria-label="Clear All Favorites">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm2 3h14l-1 11H6L5 9zm5-7h2v2h-2V2z"/></svg> Clear All
+        </a>
+        <a href="#" id="share-favorites" title="Share Favorites" role="button" aria-label="Share Favorites">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M18 8a3 3 0 1 0-2.83-2H13a3 3 0 1 0 0 6h2.17A3 3 0 1 0 18 8zM7.5 10A3.5 3.5 0 1 0 4 13.5 3.5 3.5 0 0 0 7.5 10zM11 16v2H6v-2h5z"/></svg> Share Favorites
+        </a>
+        </div>
+    </section>
+
+    <!-- Properties Favorite Cards Container -->
+    <section class="card-container" id="favorites-container" aria-live="polite" aria-relevant="all">
+        <!-- Cards injected dynamically here -->
+    </section>
+
+    <!-- Footer (shape only) -->
+    <footer role="contentinfo">
+        <div class="footer-container">
+        <div class="footer-col">
+            <div class="footer-title">Luxury Estates</div>
+            <p class="footer-text">
+            Your trusted partner in finding the perfect home. We specialize in luxury real estate and exceptional service.
+            </p>
+            <div class="footer-socials" aria-label="Social Media Links">
+            <a href="#" aria-label="Facebook" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8v-2.88h2.5V9.41c0-2.48 1.49-3.85 3.78-3.85 1.1 0 2.25.2 2.25.2v2.47h-1.26c-1.25 0-1.64.77-1.64 1.56v1.86h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14.85A4.48 4.48 0 0022.4 1.7a8.94 8.94 0 01-2.85 1.1A4.52 4.52 0 0016.84.92a4.5 4.5 0 00-4.5 4.5 4.43 4.43 0 00.12 1.03A12.79 12.79 0 013 4.16a4.5 4.5 0 001.4 6 4.46 4.46 0 01-2-.56v.06a4.5 4.5 0 003.6 4.4 4.48 4.48 0 01-2 .07 4.5 4.5 0 004.2 3.14 9 9 0 01-6.64 1.86 12.82 12.82 0 006.94 2 13 13 0 0013-13c0-.2 0-.4-.02-.6A9.22 9.22 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 3a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-5 3a5 5 0 11-5 5 5 5 0 015-5zm0 2a3 3 0 101.06 5.84A3 3 0 0012 10zm8 7a3 3 0 01-3 3H7a3 3 0 01-3-3v-3h2a5 5 0 005 5h6a3 3 0 013-3z"/></svg>
+            </a>
+            <a href="#" aria-label="Linkedin" tabindex="0">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4.98 3A2.5 2.5 0 002.5 5.5 2.5 2.5 0 004.98 8a2.5 2.5 0 002.47-2.5A2.5 2.5 0 004.98 3zM2 9.05h6v12.9H2zM15.67 11.5c-1.55 0-2.27.83-2.67 1.41v-1.2h-6v12.9h6v-7c0-1.93 1.14-3.52 3.12-3.52 2 0 2.11 1.79 2.11 3.64v6.88h6v-7.42c0-4-2-5.9-5.71-5.9z"/></svg>
+            </a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <div class="footer-title">Quick Links</div>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">Properties</a>
+            <a href="#" class="footer-link">Favorites</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-col">
+            <div class="footer-title">Property Types</div>
+            <a href="#" class="footer-link">Apartments</a>
+            <a href="#" class="footer-link">Villas</a>
+            <a href="#" class="footer-link">Duplex</a>
+            <a href="#" class="footer-link">Penthouse</a>
+        </div>
+        <div class="footer-col">
+            <div class="footer-title">Contact Information</div>
+            <p class="footer-text"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:middle;fill:#0a7c59;margin-right:6px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> 123 Luxury Street, City, Country</p>
+            <p class="footer-text"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:middle;fill:#0a7c59;margin-right:6px;"><path d="M4 4h16v2H4zM4 12h16v2H4zm0 6h10v2H4z"/></svg> +1 234 567 8900</p>
+            <p class="footer-text"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:middle;fill:#0a7c59;margin-right:6px;"><path d="M20 4H4a2 2 0 0 0-2 2v1l10 6 10-6V6a2 2 0 0 0-2-2zm0 4.15l-10 6-10-6V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"/></svg> info@luxuryestates.com</p>
+        </div>
+        </div>
+        <div class="footer-bottom">
+        <span>© 2024 Luxury Estates. جميع الحقوق محفوظة.</span>
+        <span>Designed with <span style="color:#dc3545;">❤</span> for you</span>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        // URL to fetch the properties data
+        const DATA_URL = "https://edu-me01.github.io/Json-Data/properties.json";
+
+        // Cache elements for stats and card container
+        const totalFavoritesEl = document.getElementById('total-favorites');
+        const propertiesViewedEl = document.getElementById('properties-viewed');
+        const propertiesSharedEl = document.getElementById('properties-shared');
+        const navFavCountEl = document.getElementById('nav-fav-count');
+        const favoritesContainer = document.getElementById('favorites-container');
+
+        // Controls
+        const clearAllBtn = document.getElementById('clear-all');
+        const shareFavoritesBtn = document.getElementById('share-favorites');
+
+        // State
+        let favoritesData = [];
+        let propertiesViewedCount = 0;
+        let propertiesSharedCount = 0;
+
+        // Helper Icons for badges and buttons (inline SVG for better control)
+        const icons = {
+        bed: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14" fill="#0a7c59"><path d="M2 13v7a1 1 0 002 0v-3h16v3a1 1 0 002 0v-7a2 2 0 00-2-2h-4V7a3 3 0 10-6 0v4H4a2 2 0 00-2 2z"/></svg>',
+        bath: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14" fill="#0a7c59"><path d="M12 5a2 2 0 012-2h4v10H6v-6h6zM6 15h12v4a1 1 0 01-1 1H7a1 1 0 01-1-1v-4z"/></svg>',
+        area: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14" fill="#0a7c59"><path d="M4 3h16v18H4z" fill="none"/><path d="M14 9h4v6h-4zM8 11h4v4H8z"/></svg>',
+        location: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14" fill="#0a7c59"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
+        calendar: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14" fill="#0a7c59"><path d="M3 4h18v2H3zM20 7H4v13a2 2 0 002 2h12a2 2 0 002-2z"/></svg>',
+        details: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M12 4a8 8 0 11-8 8 8 8 0 018-8zm0 12a4 4 0 100-8 4 4 0 000 8zm1-7h-2v4h2zm0 6h-2v2h2z"/></svg>',
+        call: '<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="#0a7c59"><path d="M6.62 10.79a15.05 15.05 0 006.6 6.6l2.2-2.2a1 1 0 011.1-.21 12.42 12.42 0 003.9 1.25 1 1 0 01.85 1v3a1 1 0 01-1 1A18 18 0 013 5a1 1 0 011-1h3a1 1 0 011 .85 12.42 12.42 0 001.25 3.9 1 1 0 01-.21 1.1z"/></svg>',
+        };
+
+        // Fetch data from external JSON file
+        async function fetchPropertiesData() {
+        try {
+            const response = await fetch(DATA_URL);
+            if (!response.ok) throw new Error("Network response was not ok");
+            const data = await response.json();
+            return data.properties || [];
+        } catch (error) {
+            console.warn("Fetch error:", error);
+            return [];
+        }
+        }
+
+        // Load favorites from localStorage and match with API
+    async function loadFavorites() {
+    // Get saved favorite IDs from localStorage
+    const savedFavoriteIds = JSON.parse(localStorage.getItem('favorite_properties')) || [];
+
+    // Fetch all properties from the API
+    const props = await fetchPropertiesData();
+
+    // Filter properties by IDs stored in localStorage
+    favoritesData = props.filter(property => savedFavoriteIds.includes(property.id));
+
+    // Optional: you can count how many times user viewed/shared from previous sessions if you store them
+    updateStats();
+    renderFavoriteCards();
+    }
+
+
+        // Update stats numbers in UI
+        function updateStats() {
+        const favoritesCount = favoritesData.length;
+        totalFavoritesEl.textContent = favoritesCount;
+        navFavCountEl.textContent = favoritesCount > 0 ? favoritesCount : "0";
+        propertiesViewedEl.textContent = propertiesViewedCount;
+        propertiesSharedEl.textContent = propertiesSharedCount;
+        }
+
+        // Format numbers with commas
+        function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Render favorite property cards or empty message
+        function renderFavoriteCards() {
+        favoritesContainer.innerHTML = "";
+        if (favoritesData.length === 0) {
+            const emptyMessage = document.createElement('p');
+            emptyMessage.textContent = "Your favorites list is empty.";
+            emptyMessage.style.color = "#666";
+            emptyMessage.style.fontWeight = "600";
+            emptyMessage.style.fontSize = "1.1rem";
+            emptyMessage.style.gridColumn = "1 / -1";
+            emptyMessage.style.textAlign = "center";
+            favoritesContainer.appendChild(emptyMessage);
+            return;
+        }
+        favoritesData.forEach(property => {
+            const card = document.createElement('article');
+            card.className = 'property-card';
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', property.title);
+
+            // Image container with tags and top-right buttons
+            const imgContainer = document.createElement('div');
+            imgContainer.className = 'property-img-container';
+
+            const img = document.createElement('img');
+            img.src = property.image || 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5ec3e10e-f9de-4d58-845d-0c11367ed591.png';
+            img.alt = property.title + ' - Exterior view with pool, modern architecture, bright sunny day';
+            img.loading = "lazy";
+            img.onerror = () => img.src = 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4353c673-1850-492d-9a7a-8cb475846c48.png';
+            imgContainer.appendChild(img);
+
+            // Tags - use property.type and status
+            if(property.type) {
+            const tagType = document.createElement('span');
+            tagType.className = 'property-tag';
+            tagType.textContent = property.type;
+            imgContainer.appendChild(tagType);
+            }
+            if(property.status) {
+            const tagStatus = document.createElement('span');
+            tagStatus.className = 'property-tag second';
+            tagStatus.textContent = property.status;
+            imgContainer.appendChild(tagStatus);
+            }
+
+            // Buttons: Favorite (filled heart) - non clickable, Share clickable
+            const btnsDiv = document.createElement('div');
+            btnsDiv.className = 'property-img-btns';
+
+            const favBtn = document.createElement('div');
+            favBtn.className = 'btn-fav';
+            favBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.8-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+            btnsDiv.appendChild(favBtn);
+
+            const shareBtn = document.createElement('button');
+            shareBtn.className = 'btn-share';
+            shareBtn.setAttribute('aria-label', 'Share this property');
+            shareBtn.title = 'Share this property';
+            shareBtn.type = "button";
+            shareBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M18 8a3 3 0 1 0-2.83-2H13a3 3 0 1 0 0 6h2.17A3 3 0 1 0 18 8zM6 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm12-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>';
+            shareBtn.addEventListener('click', () => {
+            Swal.fire({
+                icon: 'info',
+                title: 'Share link copied!',
+                text: `Share the property: ${property.title}`,
+                timer: 2500,
+                showConfirmButton: false
+            });
+            // Simulate copying a shareable link (could be enhanced)
+            navigator.clipboard.writeText(location.href + '#property-' + property.id).catch(() => {});
+            // Increment shared count
+            propertiesSharedCount++;
+            updateStats();
+            });
+            btnsDiv.appendChild(shareBtn);
+
+            imgContainer.appendChild(btnsDiv);
+            card.appendChild(imgContainer);
+
+            // Content block
+            const content = document.createElement('div');
+            content.className = 'property-content';
+
+            // Title
+            const title = document.createElement('h2');
+            title.className = 'property-title';
+            title.textContent = property.title;
+            content.appendChild(title);
+
+            // Location
+            const location = document.createElement('div');
+            location.className = 'property-location';
+            location.innerHTML = icons.location + property.location;
+            content.appendChild(location);
+
+            // Badges info (beds, baths, area)
+            const badgesDiv = document.createElement('div');
+            badgesDiv.className = 'property-info-badges';
+
+            if(property.beds != null) {
+            const bedsBadge = document.createElement('span');
+            bedsBadge.className = 'badge-info';
+            bedsBadge.innerHTML = icons.bed + `${property.beds} Beds`;
+            badgesDiv.appendChild(bedsBadge);
+            }
+            if(property.baths != null) {
+            const bathsBadge = document.createElement('span');
+            bathsBadge.className = 'badge-info';
+            bathsBadge.innerHTML = icons.bath + `${property.baths} Baths`;
+            badgesDiv.appendChild(bathsBadge);
+            }
+            if(property.area != null) {
+            const areaBadge = document.createElement('span');
+            areaBadge.className = 'badge-info';
+            areaBadge.innerHTML = icons.area + `${numberWithCommas(property.area)} sq ft`;
+            badgesDiv.appendChild(areaBadge);
+            }
+            content.appendChild(badgesDiv);
+
+            // Price
+            const price = document.createElement('div');
+            price.className = 'property-price';
+            price.textContent = `$${numberWithCommas(property.price)}`;
+            content.appendChild(price);
+
+            // Actions row
+            const actions = document.createElement('div');
+            actions.className = 'property-actions';
+
+            const viewBtn = document.createElement('button');
+            viewBtn.className = 'btn-view';
+            viewBtn.type = "button";
+            viewBtn.innerHTML = icons.details + 'View Details';
+            viewBtn.addEventListener('click', () => {
+            Swal.fire({
+                icon: 'info',
+                title: 'Property Details',
+                html: `<strong>${property.title}</strong><br/>More details can be implemented here.`,
+                showCloseButton: true,
+            });
+            // Increment properties viewed count on each click, reflect in UI
+            propertiesViewedCount++;
+            updateStats();
+            });
+            actions.appendChild(viewBtn);
+
+            const callBtn = document.createElement('button');
+            callBtn.className = 'btn-call';
+            callBtn.type = "button";
+            callBtn.setAttribute('aria-label', 'Call property contact number');
+            callBtn.innerHTML = icons.call;
+            callBtn.addEventListener('click', () => {
+            Swal.fire({
+                icon: 'info',
+                title: 'Contact',
+                text: `Call +1 234 567 8900 for ${property.title}`,
+                showCloseButton: true,
+            });
+            });
+            actions.appendChild(callBtn);
+
+            content.appendChild(actions);
+
+            // Added date
+            const addedDate = document.createElement('div');
+            addedDate.className = 'added-date';
+            addedDate.innerHTML = icons.calendar + `Added ${property.added || '-'} days ago`;
+            content.appendChild(addedDate);
+
+            card.appendChild(content);
+            favoritesContainer.appendChild(card);
+        });
+        }
+
+        function clearAllFavorites() {
+    Swal.fire({
+        title: 'Clear All Favorites?',
+        text: "Are you sure you want to remove all your favorite properties?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#0a7c59',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, clear all',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+        favoritesData = [];
+        propertiesViewedCount = 0;
+        propertiesSharedCount = 0;
+
+        // 🧹 Clear from localStorage as well
+        localStorage.removeItem('favorite_properties');
+
+        updateStats();
+        renderFavoriteCards();
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Cleared!',
+            text: 'Your favorite properties have been removed.',
+            timer: 2000,
+            showConfirmButton: false
+        });
+        }
+    });
+    }
+
+
+        // Share Favorites (show share alert)
+        function shareFavorites() {
+        if (!favoritesData.length) {
+            Swal.fire({
+            icon: 'info',
+            title: 'No Favorites',
+            text: 'You have no favorite properties to share.',
+            timer: 2000,
+            showConfirmButton: false
+            });
+            return;
+        }
+        // Here we simulate sharing all favorite links concatenated
+        const shareText = favoritesData.map(p => p.title).join(', ');
+        Swal.fire({
+            icon: 'info',
+            title: 'Share Favorites',
+            text: `Share these properties: ${shareText}`,
+            showCloseButton: true,
+        });
+        // Increment shared count and update
+        propertiesSharedCount++;
+        updateStats();
+        }
+
+        // Event Listeners
+        clearAllBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearAllFavorites();
+        });
+        shareFavoritesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        shareFavorites();
+        });
+
+        // Initialize on page load
+        loadFavorites();
+    </script>
+    </body>
+    </html>
+

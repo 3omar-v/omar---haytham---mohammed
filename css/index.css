@@ -1,0 +1,107 @@
+main .box_image {
+  background-image: url("./../valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+body {
+  background-color: #c3ffdc6a;
+}
+
+.nav
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+
+    h5
+    {
+        cursor: pointer;
+        color: rgb(66, 139, 105);
+    }
+
+    .ul_nav
+    {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        div
+        {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            i
+            {
+                color: red;
+            }
+
+            div
+            {
+                border: none;
+                background-color: red;
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+        .li
+        {
+            cursor: pointer;
+            border-bottom: 3px solid rgb(66, 139, 105) ;
+            color: rgb(66, 139, 105);
+        }
+        a
+        {
+            cursor: pointer;
+            color: black;
+            transition: all 0.08s;
+        }
+        a:hover
+        {
+            border-bottom: 3px solid rgb(66, 139, 105) ;
+            color: rgb(66, 139, 105);
+        }
+    }
+}
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #86feb8;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(4, 244, 84, 0.25);
+}
+img {
+  height: 300px;
+}
+
+.box {
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.box:hover {
+  scale: 1.1;
+  color: rgb(56, 94, 176);
+}
